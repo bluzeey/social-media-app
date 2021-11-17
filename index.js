@@ -1,4 +1,5 @@
 const { ApolloServer} = require('apollo-server');
+const {MONGODB}=require('./config')
 const mongoose=require('mongoose');
 const typeDefs =require('./graphql/typedefs.js');
 const resolvers=require('./graphql/resolvers');
@@ -9,7 +10,7 @@ const server=new ApolloServer({
   resolvers
 })
 
-mongoose.connect('mongodb+srv://sahilm:sahilm123@app-database.dfcxh.mongodb.net/mergn?retryWrites=true&w=majority',{useNewUrlParser:true}).then(()=>{
+mongoose.connect(MONGODB,{useNewUrlParser:true}).then(()=>{
     console.log('MongoDB connected , launch fireworks!')
     return server.listen({port:5000})
 })
