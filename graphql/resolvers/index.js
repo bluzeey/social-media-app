@@ -1,1 +1,11 @@
-export {default as postResolvers }from "./posts";
+const postsResolvers=require('./posts.js')
+const usersResolvers=require('./users')
+
+module.exports={
+    Query:{
+        ...postsResolvers.Query,
+    },
+    Mutation:{
+        ...usersResolvers.Mutation
+    }
+}

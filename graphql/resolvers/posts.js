@@ -1,5 +1,5 @@
-import {Post} from '../../models/post.js'
- const resolvers={
+const Post=require('../../models/post.js')
+module.exports={
     Query:{
         async getPosts(){
             try{
@@ -12,4 +12,3 @@ import {Post} from '../../models/post.js'
         }
     }
 }
-export default resolvers;

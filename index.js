@@ -1,8 +1,7 @@
 const { ApolloServer} = require('apollo-server');
 const mongoose=require('mongoose');
-const Post=require('./models/post.js')
-import { typeDefs } from './graphql/typedefs.js';
-import { resolvers } from './graphql/resolvers';
+const typeDefs =require('./graphql/typedefs.js');
+const resolvers=require('./graphql/resolvers');
 
 
 const server=new ApolloServer({
