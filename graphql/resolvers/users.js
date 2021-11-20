@@ -83,6 +83,7 @@ function generateToken(user){
                id:res._id,
                token
            }
-         }
+         },
+         
      }
  }
