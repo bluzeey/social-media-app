@@ -4,6 +4,7 @@ import 'semantic-ui-css/semantic.min.css'
 import {Home,Login,Register} from './pages'
 import MenuBar from './component/MenuBar';
 import {Container} from 'semantic-ui-react'
+
 function App() {
   return (
     <Router>
