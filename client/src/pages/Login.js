@@ -1,54 +1,43 @@
-import {useState} from 'react'
+import {useState,useContext} from 'react'
 import {Button,Form} from 'semantic-ui-react'
 import { useMutation } from '@apollo/client'
+import {useForm} from '../utils/hooks'
 import gql from 'graphql-tag'
+import { useNavigate } from "react-router-dom";
+import {AuthContext} from '../context/auth'
 
-
-function Register(props) {
+function Login() {
+    const context=useContext(AuthContext)
+    const navigate = useNavigate()
     const [errors,setErrors]=useState({})
-    const[values,setValues]=useState({
+    const {onChange,onSubmit,values}=useForm(loginUserCallback,{
         username:'',
-        email:'',
         password:'',
-        confirmPassword:''
     })
-    const onChange=(event)=>{
-        setValues({...values,[event.target.name]:event.target.value})
-    }
-    const [addUser,{loading}]=useMutation(REGISTER_USER,{
-        update(_,result){
-            console.log(result)
-            props.history.push('/')
+
+    const [loginUser,{loading}]=useMutation(LOGIN_USER,{
+        update(_,{data:{login:userData}}){
+            context.login(userData)
+            navigate('/')
         },
         onError(err){
-           console.log(err.graphQLErrors[0].extensions.errors)
-           setErrors(err.graphQLErrors[0].extensions.errors)
+           setErrors(err?.graphQLErrors[0]?.extensions?.errors)
         },
         variables:values})
-    const onSubmit=(event)=>{
-        event.preventDefault();
-        addUser()
+    function loginUserCallback(){
+        loginUser()
     }
     return (
         <div className="form-container">
             <Form onSubmit={onSubmit} noValidate className={loading ? 'loading':''}>
-                <h1>Register</h1>
+                <h1>Login</h1>
                 <Form.Input 
                    type='text'
                    label="Username"
                    placeholder="Username..."
                    name="username"
                    value={values.username}
-                   error={errors.username ? true : false}
-                   onChange={onChange}
-                   />
-                <Form.Input 
-                   type='email'
-                   label="Email"
-                   placeholder="Email..."
-                   name="email"
-                   value={values.email}
-                   error={errors.email ? true : false}
+                   error={errors?.username ? true : false}
                    onChange={onChange}
                    />
                 <Form.Input 
@@ -57,23 +46,14 @@ function Register(props) {
                    placeholder="Password..."
                    name="password"
                    value={values.password}
-                   error={errors.password ? true : false}
-                   onChange={onChange}
-                   />
-                <Form.Input
-                   type='password'
-                   label="Confirm Password"
-                   placeholder="Confirm Password..."
-                   name="confirmPassword"
-                   value={values.confirmPassword}
-                   error={errors.confirmPassword ? true : false}
+                   error={errors?.password ? true : false}
                    onChange={onChange}
                    />
                 <Button type="submit" primary>
-                    Register
+                    Login
                 </Button>
             </Form>
-            {Object.keys(errors).length> 0 && (
+            {Object.keys(errors).length > 0 && (
                  <div className="ui error message">
                     <ul className="list">
                         {Object.values(errors).map(value=>(
@@ -86,21 +66,12 @@ function Register(props) {
         </div>
     )
 }
-const REGISTER_USER=gql`
-mutation register(
+const LOGIN_USER=gql`
+mutation login(
     $username:String!
-    $email:String!
     $password:String!
-    $confirmPassword:String!
 ){
-    register(
-        registerInput:{
-            username:$username
-            email:$email
-            password:$password
-            confirmPassword:$confirmPassword
-        }
-    ){
+    login(username:$username,password:$password){
         id
         email
         username
@@ -108,13 +79,4 @@ mutation register(
         token
     }
 }`
-
-function Login() {
-    return (
-        <div>
-            Login
-        </div>
-    )
-}
-
 export default Login
