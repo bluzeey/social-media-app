@@ -1,7 +1,7 @@
 import './App.css';
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 import 'semantic-ui-css/semantic.min.css'
-import {Home,Login,Register} from './pages'
+import {Home,Login,Register,SinglePost} from './pages'
 import MenuBar from './component/MenuBar';
 import {Container} from 'semantic-ui-react'
 import {AuthProvider} from './context/auth'
@@ -22,6 +22,7 @@ function App() {
        <Route exact path='/register' element={<PrivateRoute/>}>
            <Route exact path='/register' element={<Register/>}/>
        </Route>
+       <Route exact path="/posts/:postId" element={<SinglePost/>}/>
       </Routes>
       </Container>
     </Router>
