@@ -43,7 +43,7 @@ module.exports={
 
             return post
         },
-        async deletePost(_,{postID},context){
+        async deletePost(_,{postId},context){
             const user=checkAuth(context);
             try{
                 const post=await Post.findById(postId);
