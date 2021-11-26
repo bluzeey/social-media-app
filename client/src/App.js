@@ -22,7 +22,7 @@ function App() {
        <Route exact path='/register' element={<PrivateRoute/>}>
            <Route exact path='/register' element={<Register/>}/>
        </Route>
-       <Route exact path="/posts/:postId" element={<SinglePost/>}/>
+        <Route exact path="/posts/:postId" element={<SinglePost/>}/> 
       </Routes>
       </Container>
     </Router>

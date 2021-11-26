@@ -2,7 +2,7 @@ import {useState,useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import {useMutation} from '@apollo/client'
 import gql from 'graphql-tag'
-import {Button,Icon, Label} from 'semantic-ui-react'
+import {Button,Icon, Label,Popup} from 'semantic-ui-react'
 function LikeButton({post:{id,likeCount,likes},user}) {
     const [liked,setLiked]=useState(false)
     useEffect(()=>{
@@ -37,12 +37,16 @@ function LikeButton({post:{id,likeCount,likes},user}) {
         </Button> 
     )
     return (
-        <Button as='div' labelPosition='right' onClick={likePost}>
+        <Popup 
+         inverted
+         trigger={<Button as='div' labelPosition='right' onClick={likePost}>
             {likeButton}
             <Label basic color='teal' pointing='left'>
                 {likeCount}
             </Label>
-        </Button>
+        </Button>}
+         content={liked ? 'Unlike Post':'Like Post'}/>
+        
     )
 }
 const LIKE_POST_MUTATION=gql`

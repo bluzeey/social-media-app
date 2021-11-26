@@ -1,4 +1,4 @@
-import {Card,Icon,Label,Image,Button} from 'semantic-ui-react'
+import {Card,Icon,Label,Image,Button,Popup} from 'semantic-ui-react'
 import moment from 'moment'
 import { Link } from 'react-router-dom'
 import {AuthContext} from '../context/auth'
@@ -23,14 +23,19 @@ function PostCard({post:{body,createdAt,id,username,likeCount,commentCount,likes
             </Card.Content>
             <Card.Content extra>
                  <LikeButton user={user} post={{id,likes,likeCount}}/>
-                <Button  labelPosition='right' as={Link} to={`/posts/${id}`}>
-                    <Button color='blue' basic>
-                        <Icon name='comments' />
+                 <Popup
+                   content="Comment on post"
+                   inverted
+                   trigger={
+                    <Button labelPosition='right' as={Link} to={`/posts/${id}`}>
+                        <Button color='blue' basic>
+                            <Icon name='comments' />
+                        </Button>
+                        <Label basic color='blue' pointing='left'>
+                            {commentCount}
+                        </Label>
                     </Button>
-                    <Label basic color='blue' pointing='left'>
-                        {commentCount}
-                    </Label>
-                </Button>
+                   }/>
                 {user && user.username===username && <DeleteButton postId={id}/>}
             </Card.Content>
             </Card>
