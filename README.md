@@ -59,7 +59,7 @@
 <!-- ABOUT THE PROJECT -->
 ## Alan AI News
 
-[![Netflix][product-screenshot]]()
+[![Netflix][product-screenshot]](https://twitter-dev-mergn.netlify.app/)
 
 
 
@@ -135,12 +135,12 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Sahil Maheshwari - [@TalkinIdeas](https://twitter.com/TalkinIdeas) - sahilm1711@gmail.com
 
-Project Link: [Alan AI News](https://ai-powered-news-react.netlify.app/)
+Project Link: [Twitter Dev](https://twitter-dev-mergn.netlify.app/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 [license-shield]: https://img.shields.io/github/license/bluzeey/whatsapp-clone.svg?style=for-the-badge
-[license-url]: https://github.com/bluzeey/whatsapp-clone/blob/main/LICENSE.txt
+[license-url]: https://github.com/bluzeey/social-media-app/blob/main/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
 [linkedin-url]: https://linkedin.com/in/sahil-maheshwari
 [product-screenshot]: images/twitterDev.PNG
