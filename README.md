@@ -9,7 +9,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/bluzeey/ai-news-app">
-    <img src="public/alan.jpg" alt="Logo" width="100" height="80">
+    <img src="images/index.jpg" alt="Logo" width="100" height="80">
   </a>
 
 <h3 align="center">Alan AI News</h3>
@@ -17,14 +17,14 @@
   <p align="center">
     This is an AI powered news application which I have created using React, Material-UI and Alan AI.
     <br />
-    <a href="https://github.com/bluzeey/ai-news-app"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/bluzeey/social-media"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://ai-powered-news-react.netlify.app/">View Demo</a>
     ·
-    <a href="https://github.com/bluzeey/ai-news-app/issues">Report Bug</a>
+    <a href="https://github.com/bluzeey/social-media/issues">Report Bug</a>
     ·
-    <a href="https://github.com/bluzeey/ai-news-app/issues">Request Feature</a>
+    <a href="https://github.com/bluzeey/social-media/issues">Request Feature</a>
   </p>
 </div>
 
@@ -143,4 +143,4 @@ Project Link: [Alan AI News](https://ai-powered-news-react.netlify.app/)
 [license-url]: https://github.com/bluzeey/whatsapp-clone/blob/main/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
 [linkedin-url]: https://linkedin.com/in/sahil-maheshwari
-[product-screenshot]: public/alanNews.PNG
+[product-screenshot]: images/twitterDev.png
