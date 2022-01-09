@@ -9,13 +9,13 @@
 <br />
 <div align="center">
   <a href="https://github.com/bluzeey/social-media-app">
-    <img src="images/index.png" alt="Logo" width="100" height="80">
+    <img src="images/index.png" alt="Logo" width="100" height="100">
   </a>
 
-<h3 align="center">Alan AI News</h3>
+<h3 align="center">Twitter Dev</h3>
 
   <p align="center">
-    This is an AI powered news application which I have created using React, Material-UI and Alan AI.
+    It is a twitter like application which I had made using React and Graphql and Mongoose.
     <br />
     <a href="https://github.com/bluzeey/social-media-app/"><strong>Explore the docs »</strong></a>
     <br />
@@ -70,8 +70,8 @@
 ### Built With
 
 * [React.js](https://reactjs.org/)
-* [Material UI](https://mui.com/)
-* [Alan AI](https://alan.app/)
+* [Apollo](https://www.apollographql.com/)
+* [Mongoose](https://mongoosejs.com/)
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
