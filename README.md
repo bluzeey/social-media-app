@@ -57,7 +57,7 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## Alan AI News
+## Twitter Dev
 
 [![Netflix][product-screenshot]](https://twitter-dev-mergn.netlify.app/)
 
