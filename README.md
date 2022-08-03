@@ -12,7 +12,7 @@
     <img src="images/index.png" alt="Logo" width="100" height="100">
   </a>
 
-<h3 align="center">Twitter Dev</h3>
+<h3 align="center"> Twitter Dev </h3>
 
   <p align="center">
     It is a twitter like application which I had made using React and Graphql and Mongoose.
